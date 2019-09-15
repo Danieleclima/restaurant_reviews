@@ -10,13 +10,12 @@ class UsersController < ApplicationController
         @user.save
         redirect_to user_path(@user)
     else
-        redirect_to new_user
+        redirect_to new_user_path
     end
     end
 
     def show
        @user = User.find_by(id: params[:id])
-       binding.pry
     end
 
     def user_params

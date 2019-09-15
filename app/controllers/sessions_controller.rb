@@ -4,11 +4,13 @@ class SessionsController < ApplicationController
     end
   
     def create
-      if User.find_by(username: params[:username])
-        redirect_to '/sessions/new'
+      #binding.pry
+        @user = User.find_by(username: params[:username])
+      if !@user.authenticate(params[:password])
+        redirect_to '/login'
       else
         session[:username] = params[:username]
-        redirect_to '/' 
+        redirect_to '/restaurants' 
       end
     end
   
