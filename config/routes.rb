@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :categories
   resources :restaurants
   resources :reviews
-  resources :users
+  resources :users do
+    resources :categories, only: [:show, :index, :new, :create]
+  end
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
