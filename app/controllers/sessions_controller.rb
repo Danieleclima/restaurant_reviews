@@ -4,13 +4,19 @@ class SessionsController < ApplicationController
     end
   
     def create
-      #binding.pry
-        @user = User.find_by(username: params[:username])
-      if !@user.authenticate(params[:password])
-        redirect_to '/login'
+      if auth_hash = request.env["omniauth.auth"]
+        @user = User.find_or_create_by_omniauth(auth_hash)
+        session[:user_id] = @user.id
+
+        redirect_to "/users/#{@user.id}"
       else
-        session[:username] = params[:username]
-        redirect_to '/restaurants' 
+        @user = User.find_by(:username => params[:username])
+        if @user && @user.authenticate(params[:password])
+          session[:user_id] = @user.id
+          redirect_to "/users/#{@user.id}"
+        else
+        render 'sessions/new'
+        end
       end
     end
   
