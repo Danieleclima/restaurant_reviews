@@ -4,4 +4,9 @@ class RestaurantsController < ApplicationController
         @restaurants = Restaurant.all
     end
     
+    def show
+        @restaurant = Restaurant.find_by(:id => params[:id])
+        @review = Review.new 
+    end
+
 end

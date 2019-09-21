@@ -1,0 +1,17 @@
+<%= @restaurant.name %>
+
+<% if logged_in? %>
+<%= form_for @review do |f| %>
+
+    <%= f.label :rating%>
+    <%= f.text_field :rating %> <br/>
+   
+    <%= f.label :description%>
+    <%= f.text_field :description%> <br/>
+
+    <%= f.hidden_field :user_id, session[:user_id]%> <br/>
+
+    <%= f.submit %>
+
+<% end %>
+<% end %>

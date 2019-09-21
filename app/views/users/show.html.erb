@@ -7,7 +7,7 @@
     <%@user.restaurants.each do |r|%>
         <div>
         <p> Restaurant's name: <%= r.name %> Restaurant's category: <%=r.category%></p>
-        <%= r.reviews.each do |review|%>
+        <% r.reviews.each do |review|%>
           <% if review.user_id == @user.id %>
                 <p><%= review.description%></p>
             <%end%>
