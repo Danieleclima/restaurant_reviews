@@ -2,7 +2,7 @@
 
     <% @restaurants.map do |r| %>
         <div>
-        <p><%=r.name%></p>
+        <h3><%=r.name%></h3> <%= link_to('View page', "restaurants/#{r.id}") %>
         <p><%=r.description%></p>
         <p><%=r.category%></p>
         </div>

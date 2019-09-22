@@ -1,7 +1,8 @@
 <h2><%= @restaurant.name %></h2> <br/>
+<p><%= @restaurant.description %></p>
 
 <% if logged_in? %>
-<h4>Write your review of <%= @restaurant.name%></h4> <br/>
+<h4>Write your own review of <%= @restaurant.name%></h4> <br/>
 <%= form_for @review do |f| %>
 
     <%= f.label :rating%>
@@ -12,7 +13,7 @@
 
     <%= f.hidden_field :user_id, :value => current_user %> <br/>
     <%= f.hidden_field :restaurant_id, :value => @restaurant.id %> <br/>
-    
+
     <%= f.submit %>
 
 <% end %>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :categories, only: [:show, :index, :new, :create]
   end
 
-  get '/login' => 'sessions#login'
+  get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
   get '/auth/facebook/callback' => 'sessions#create'

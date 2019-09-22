@@ -15,8 +15,8 @@ class UsersController < ApplicationController
     end
 
     def show
-       @user = User.find_by(id: params[:id])
-       if !current_user.id == params[:id]
+       @user = User.find_by(id: params[:id]) 
+       if !current_user.id == params[:id] ||= session[:user_id]
          redirect_to '/restaurants'
        end
     end
