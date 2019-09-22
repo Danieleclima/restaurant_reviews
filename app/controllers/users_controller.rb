@@ -16,6 +16,9 @@ class UsersController < ApplicationController
 
     def show
        @user = User.find_by(id: params[:id])
+       if !current_user.id == params[:id]
+         redirect_to '/restaurants'
+       end
     end
 
     def user_params

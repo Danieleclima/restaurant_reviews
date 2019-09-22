@@ -4,12 +4,24 @@
     <title>RestaurantReiewsApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application" %>
   </head>
 
   <body>
+  <header class="site-header">
+    <ul>
+    <li>
+    <%= link_to('Log in', '/login') %>
+    </li>
+    <li>
+    <%= link_to('Restaurants', '/restaurants') %>
+    </li>
+    <li>
+    <%= link_to('Signup', '/login') %>
+    </li>
+    </ul>
+  </header> 
+  <br/>
     <%= yield %>
   </body>
 </html>
