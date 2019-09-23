@@ -10,15 +10,25 @@
   <body>
   <header class="site-header">
     <ul>
+    <% if !session[:user_id]%>
     <li>
     <%= link_to('Log in', '/login') %>
+    </li> 
+    <li>
+    <%= link_to('Signup', '/signup') %>
     </li>
+    <% end %>
     <li>
     <%= link_to('Restaurants', '/restaurants') %>
     </li>
+    <% if session[:user_id] %>
     <li>
-    <%= link_to('Signup', '/login') %>
+    <%= link_to('My account', user_path(current_user.id)) %>
     </li>
+    <li>
+    <%= link_to('Logout', '/logout') %>
+    </li>
+    <% end %>
     </ul>
   </header> 
   <br/>

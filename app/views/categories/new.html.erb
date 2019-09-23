@@ -1,0 +1,15 @@
+<h1> Create new category</h1>
+
+<%= form_for @user do |f| %>
+
+    <%= f.fields_for :categories do |categ|%>
+
+    <%= categ.label :name %>
+    <%= categ.text_field :name %>
+
+    <%= categ.hidden_field :user_id, :value => session[:user_id] %>
+   <% end %>
+ 
+    <%= f.submit %>
+
+<% end %>

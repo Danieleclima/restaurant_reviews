@@ -2,10 +2,6 @@ class SessionsController < ApplicationController
 
     def new
     end
-    
-    def signup
-      
-    end
 
     def create
       if auth_hash = request.env["omniauth.auth"]
@@ -25,7 +21,8 @@ class SessionsController < ApplicationController
     end
   
     def destroy
-      session.delete :name
+      session.destroy
+      redirect_to '/restaurants'
     end
 
 end

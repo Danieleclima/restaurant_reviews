@@ -24,6 +24,11 @@
     border-bottom: 1px solid #efefef;
     }
 
+    body {
+        font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+        padding: 10px;
+        background-image: url("https://cdn.vox-cdn.com/thumbor/qtrH6pOAoml-LYysFBb8W8lc680=/0x0:960x776/1200x900/filters:focal(404x312:556x464)/cdn.vox-cdn.com/uploads/chorus_image/image/54422771/Taystee_s.0.0.jpg");
+    }
 
     h1, h3 {
         font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
@@ -44,4 +49,9 @@
 
     form {
         padding: 40px;
+    }
+
+    .field_with_errors {
+        border-color: red;
+        border-width: 4px;
     }
