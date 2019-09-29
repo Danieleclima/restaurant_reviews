@@ -1,15 +1,15 @@
 <h1> Create new category</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for @category do |f| %>
 
-    <%= f.fields_for :categories do |categ|%>
+    <%= f.label :name %>
+    <%= f.text_field :name %> </br>
 
-    <%= categ.label :name %>
-    <%= categ.text_field :name %>
+    <%= f.label :Restaurant %>
+    <%= f.collection_select :restaurant_id, @user.restaurants, :id, :name, include_blank: false %>
 
-    <%= categ.hidden_field :user_id, :value => session[:user_id] %>
-   <% end %>
- 
-    <%= f.submit %>
+    <%= f.hidden_field :user_id, :value => @user.id %>
+
+    <%= f.submit :create %>
 
 <% end %>

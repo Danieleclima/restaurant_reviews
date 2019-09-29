@@ -1,14 +1,14 @@
 
-<h2>Welcome <%=@user.username%></h2>
+<h2>Welcome <%=current_user.username%></h2>
 
 
-<% if !@user.restaurants.empty? %>
+<% if !current_user.restaurants.empty? %>
     <p>Here's a list with your restaurants:</p>
-    <%@user.restaurants.each do |r|%>
+    <%current_user.restaurants.each do |r|%>
         <div>
         <p> Restaurant's name: <%= r.name %> Restaurant's category: <%=r.category%></p>
         <% r.reviews.each do |review|%>
-          <% if review.user_id == @user.id %>
+          <% if review.user_id == current_user.id %>
                 <p><%= review.description%></p>
             <%end%>
         <%end%>
