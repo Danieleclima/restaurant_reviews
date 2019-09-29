@@ -46,7 +46,7 @@
         padding: 14px 16px;
       }
     
-      form {
+    form {
         padding: 40px;
     }
 
@@ -56,4 +56,10 @@
 
     .field_with_errors input {
     border: 3px solid red;
+    }
+
+    p {
+        color: #efefef;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.109);
     }
