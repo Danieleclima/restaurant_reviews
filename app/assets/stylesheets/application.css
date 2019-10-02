@@ -38,12 +38,14 @@
         list-style-type: none;
         margin: 0;
         padding: 0;
+        text-align: center
     }
 
     li {
         display: inline;
         font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
         padding: 14px 16px;
+        
       }
     
     form {

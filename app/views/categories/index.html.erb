@@ -1,3 +1,5 @@
 <% @categories.each do |c| %>
     <h3><%= c.name %></h3>
 <% end %>
+
+<%= link_to('New Category', new_user_category_path(current_user)) %>

@@ -10,7 +10,7 @@
   <body>
   <header class="site-header">
     <ul>
-    <% if !session[:user_id]%>
+    <% if !current_user%>
     <li>
     <%= link_to('Log in', '/login') %>
     </li> 
@@ -21,9 +21,12 @@
     <li>
     <%= link_to('Restaurants', '/restaurants') %>
     </li>
-    <% if session[:user_id] %>
+    <% if current_user %>
     <li>
     <%= link_to('My account', user_path(current_user.id)) %>
+    </li>
+    <li>
+    <%= link_to('My categories', user_categories_path(current_user)) %>
     </li>
     <li>
     <%= link_to('Logout', '/logout') %>

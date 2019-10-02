@@ -9,10 +9,9 @@ class Review < ApplicationRecord
         restaurant = self.restaurant_id
         user = User.find_by(:id => self.user_id)
             user.restaurants.each do |r|
-            if r.id == restaurant.id
+            if r.id == restaurant
                 errors.add(:user_id, "you can't review the same hotel twice")
             end
         end
     end
-
 end

@@ -1,7 +1,7 @@
 <h2><%= @restaurant.name %></h2> <br/>
 <p><%= @restaurant.description %></p>
 
-<% if logged_in? %>
+<% if current_user %>
 <h4>Write your own review of <%= @restaurant.name%></h4> <br/>
 <%= form_for @review do |f| %>
 
