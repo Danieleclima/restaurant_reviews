@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/users/most_reviews' => 'users#most_reviews'
   resources :categories
   resources :restaurants
   resources :reviews

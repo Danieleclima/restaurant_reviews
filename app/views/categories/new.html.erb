@@ -1,7 +1,13 @@
 <h1> Create new category</h1>
 
 <%= form_for @category do |f| %>
-
+    <% if @category.errors.any? %>
+        <%=pluralize(@category.errors.count, "error")%>
+           <p>prevented this category from being saved: </p>
+            <% @category.errors.full_messages.each do |msg|%>
+             <%= msg %>
+            <%end %>
+    <% end %>
     <%= f.label :name %>
     <%= f.text_field :name %> </br>
 

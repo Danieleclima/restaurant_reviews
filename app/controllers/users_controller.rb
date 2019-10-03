@@ -21,6 +21,10 @@ class UsersController < ApplicationController
        end
     end
 
+    def most_reviews
+        @user = User.most_reviews.first
+    end
+
     def user_params
         params.require(:user).permit(:username, :password)
     end

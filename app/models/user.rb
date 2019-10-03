@@ -13,6 +13,8 @@ class User < ApplicationRecord
    end
   end
 
-
+  def self.most_reviews
+    select("*, count(reviews.id) AS reviews_count").joins(:reviews).group(:user_id).order('reviews_count DESC').limit(1)
+  end
 
 end
